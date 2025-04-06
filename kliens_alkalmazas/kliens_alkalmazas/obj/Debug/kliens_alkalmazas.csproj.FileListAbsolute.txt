@@ -1,0 +1,12 @@
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe.config
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.pdb
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.AssemblyReference.cache
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.Form1.resources
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.Properties.Resources.resources
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.UserControlKeszlet.resources
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.UserControlRendeles.resources
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.GenerateResource.cache
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.CoreCompileInputs.cache
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe
+C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.pdb

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hotcakes.CommerceDTO.v1.Client;
+using System.IO;
+using System.Globalization;
 
 namespace kliens_alkalmazas
 {
@@ -109,16 +111,14 @@ namespace kliens_alkalmazas
                         termek.Beszállító = "BakeBeam Sütőgyártó kft.";
                     }
 
-                    //termek.Beszállító = response_product.Content[i].ManufacturerId;
-
                     termekek.Add(termek);
-                    
+
                 }
 
                 dataGridView1.DataSource = termekek;
 
                 //beszállítók betöltése listboxba
-                
+
 
                 for (int i = 0; i < beszallitok.Content.Count; i++)
                 {
@@ -135,20 +135,75 @@ namespace kliens_alkalmazas
             if (index != null)
             {
                 List<Termek> szures = new List<Termek>();
-
                 for (int i = 0; i < termekek.Count; i++)
                 {
                     if (termekek[i].Beszállító == index.ToString())
                     {
                         szures.Add(termekek[i]);
-                    }
 
+                    }
                 }
 
                 dataGridView1.DataSource = szures;
 
             }
         }
+
+        private void buttonCsv_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.DataSource == null)
+            {
+                MessageBox.Show("Nincs exportálható adat.");
+                return;
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "CSV fájl (*.csv)|*.csv";
+               
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+                        {
+                            // Fejléc írása
+                            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                            {
+                                sw.Write(dataGridView1.Columns[i].HeaderText);
+                                if (i < dataGridView1.Columns.Count - 1)
+                                    sw.Write(";");
+                            }
+                            sw.WriteLine();
+
+                            // Adatok írása
+                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                            {
+                                if (!row.IsNewRow)
+                                {
+                                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                                    {
+                                        var cellValue = row.Cells[i].Value?.ToString()?.Replace(";", ",") ?? "";
+                                        sw.Write(cellValue);
+                                        if (i < dataGridView1.Columns.Count - 1)
+                                            sw.Write(";");
+                                    }
+                                    sw.WriteLine();
+                                }
+                            }
+                        }
+
+                        MessageBox.Show("Sikeres exportálás!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hiba történt az exportálás során: ");
+                    }
+                }
+            }
+        }
+
     }
 
 

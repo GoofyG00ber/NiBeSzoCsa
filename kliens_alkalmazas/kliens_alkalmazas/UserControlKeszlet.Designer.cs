@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.listBoxBeszallitok = new System.Windows.Forms.ListBox();
+            this.buttonCsv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,22 @@
             this.listBoxBeszallitok.TabIndex = 1;
             this.listBoxBeszallitok.SelectedIndexChanged += new System.EventHandler(this.listBoxBeszallitok_SelectedIndexChanged);
             // 
+            // buttonCsv
+            // 
+            this.buttonCsv.Location = new System.Drawing.Point(444, 314);
+            this.buttonCsv.Name = "buttonCsv";
+            this.buttonCsv.Size = new System.Drawing.Size(110, 59);
+            this.buttonCsv.TabIndex = 2;
+            this.buttonCsv.Text = "Mentés csv-be";
+            this.buttonCsv.UseVisualStyleBackColor = true;
+            this.buttonCsv.Click += new System.EventHandler(this.buttonCsv_Click);
+            // 
             // UserControlKeszlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.buttonCsv);
             this.Controls.Add(this.listBoxBeszallitok);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserControlKeszlet";
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ListBox listBoxBeszallitok;
+        private System.Windows.Forms.Button buttonCsv;
     }
 }

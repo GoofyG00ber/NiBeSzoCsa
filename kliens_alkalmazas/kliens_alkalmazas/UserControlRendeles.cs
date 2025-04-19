@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hotcakes.CommerceDTO.v1.Client;
+using Hotcakes.CommerceDTO.v1.Orders;
+using Hotcakes.CommerceDTO.v1;
 
 namespace kliens_alkalmazas
 {
@@ -39,6 +41,7 @@ namespace kliens_alkalmazas
                     rendeles.Dátum = response.Content[i].TimeOfOrderUtc;
                     rendeles.Ár = response.Content[i].TotalGrand;
                     rendeles.Státusz = response.Content[i].StatusName;
+                    
 
                     rendelesek.Add(rendeles);
                 }
@@ -47,6 +50,7 @@ namespace kliens_alkalmazas
 
             }
 
+            
         }
 
         private static Api apiHivas()

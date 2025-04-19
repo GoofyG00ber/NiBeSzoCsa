@@ -11,8 +11,9 @@ using Hotcakes.CommerceDTO.v1.Client;
 
 namespace kliens_alkalmazas
 {
-    public partial class UserControlKeszlet: UserControl
+    public partial class UserControlKeszlet : UserControl
     {
+        List<Termek> termekek = new List<Termek>();
         public UserControlKeszlet()
         {
             InitializeComponent();
@@ -40,7 +41,55 @@ namespace kliens_alkalmazas
             }
             else
             {
-                dataGridView1.DataSource = response_product.Content;
+
+                for (int i = 0; i < response_product.Content.Count; i++)
+                {
+                    Termek termek = new Termek();
+                    termek.Név = response_product.Content[i].ProductName;
+                    termek.BeszerzésiÁr = response_product.Content[i].SiteCost;
+
+                    var keszlet = proxy.ProductInventoryFindForProduct(response_product.Content[i].Bvin);
+                    termek.Raktáron = keszlet.Content[0].QuantityOnHand;
+                    termek.MinimálisMennyiség = keszlet.Content[0].LowStockPoint;
+                    
+                    
+                    if (keszlet.Content[0].LowStockPoint == 1)
+                    {
+                        termek.OptimálisMennyiség = 3;
+                    }
+                    else if (keszlet.Content[0].LowStockPoint == 5)
+                    {
+                        termek.OptimálisMennyiség = 10;
+                    }
+                    else if (keszlet.Content[0].LowStockPoint == 15)
+                    {
+                        termek.OptimálisMennyiség = 30;
+                    }
+                    else if (keszlet.Content[0].LowStockPoint == 50)
+                    {
+                        termek.OptimálisMennyiség = 100;
+                    }
+                    else
+                    {
+                        termek.OptimálisMennyiség = 300;
+                    }
+
+
+                    if (termek.OptimálisMennyiség > termek.Raktáron)
+                    {
+                        termek.OptimálishozSzükségesFt = (termek.OptimálisMennyiség - termek.Raktáron) * termek.BeszerzésiÁr;
+                    }
+                    else
+                    {
+                        termek.OptimálishozSzükségesFt = 0;
+                    }
+
+
+                        termekek.Add(termek);
+                }
+
+                dataGridView1.DataSource = termekek;
+
             }
         }
     }

@@ -58,6 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendeles.cs" />
+    <Compile Include="Termek.cs" />
     <Compile Include="UserControlKeszlet.cs">
       <SubType>UserControl</SubType>
     </Compile>

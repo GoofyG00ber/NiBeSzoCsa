@@ -197,6 +197,11 @@ namespace kliens_alkalmazas
                 }
             }
         }
+
+        private void buttonOsszes_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = termekek;
+        }
     }
 }
     

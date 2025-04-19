@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listBoxBeszallitok = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,14 +43,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(389, 315);
             this.dataGridView1.TabIndex = 0;
             // 
+            // listBoxBeszallitok
+            // 
+            this.listBoxBeszallitok.FormattingEnabled = true;
+            this.listBoxBeszallitok.ItemHeight = 16;
+            this.listBoxBeszallitok.Location = new System.Drawing.Point(444, 73);
+            this.listBoxBeszallitok.Name = "listBoxBeszallitok";
+            this.listBoxBeszallitok.Size = new System.Drawing.Size(240, 100);
+            this.listBoxBeszallitok.TabIndex = 1;
+            this.listBoxBeszallitok.SelectedIndexChanged += new System.EventHandler(this.listBoxBeszallitok_SelectedIndexChanged);
+            // 
             // UserControlKeszlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.listBoxBeszallitok);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserControlKeszlet";
-            this.Size = new System.Drawing.Size(470, 529);
+            this.Size = new System.Drawing.Size(687, 529);
             this.Load += new System.EventHandler(this.UserControlKeszlet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -59,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListBox listBoxBeszallitok;
     }
 }

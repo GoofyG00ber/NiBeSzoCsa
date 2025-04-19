@@ -13,7 +13,7 @@ namespace kliens_alkalmazas
 {
     public partial class UserControlKeszlet : UserControl
     {
-        List<Termek> termekek = new List<Termek>();
+        BindingList<Termek> termekek = new BindingList<Termek>();
         public UserControlKeszlet()
         {
             InitializeComponent();
@@ -32,7 +32,9 @@ namespace kliens_alkalmazas
         {
             Api proxy = apiHivas();
 
+            //termékek betöltése datagridviewba
             var response_product = proxy.ProductsFindAll();
+            var beszallitok = proxy.ManufacturerFindAll();
 
             if (response_product == null || response_product.Content == null || response_product.Content.Count == 0)
             {
@@ -51,8 +53,8 @@ namespace kliens_alkalmazas
                     var keszlet = proxy.ProductInventoryFindForProduct(response_product.Content[i].Bvin);
                     termek.Raktáron = keszlet.Content[0].QuantityOnHand;
                     termek.MinimálisMennyiség = keszlet.Content[0].LowStockPoint;
-                    
-                    
+
+
                     if (keszlet.Content[0].LowStockPoint == 1)
                     {
                         termek.OptimálisMennyiség = 3;
@@ -86,11 +88,64 @@ namespace kliens_alkalmazas
                         termek.OptimálishozSzükségesDb = 0;
                     }
 
+                    if (response_product.Content[i].ManufacturerId == "d579958c-9637-4680-958a-171f5ef37452")
+                    {
+                        termek.Beszállító = "BakeBeam Grillsütőgyártó kft.";
+                    }
+                    else if (response_product.Content[i].ManufacturerId == "067ff943-bb21-4f5f-bfec-1b66124df77e")
+                    {
+                        termek.Beszállító = "BakeBeam Mikrógyártó kft.";
+                    }
+                    else if (response_product.Content[i].ManufacturerId == "8e3d70b5-8050-4958-81aa-1f2f417d630e")
+                    {
+                        termek.Beszállító = "BakeBeam Kellékgyártó kft.";
+                    }
+                    else if (response_product.Content[i].ManufacturerId == "25afa805-3277-4272-8bfc-c5531289239b")
+                    {
+                        termek.Beszállító = "BakeBeam Airfryergyártó kft.";
+                    }
+                    else
+                    {
+                        termek.Beszállító = "BakeBeam Sütőgyártó kft.";
+                    }
 
-                        termekek.Add(termek);
+                    //termek.Beszállító = response_product.Content[i].ManufacturerId;
+
+                    termekek.Add(termek);
+                    
                 }
 
                 dataGridView1.DataSource = termekek;
+
+                //beszállítók betöltése listboxba
+                
+
+                for (int i = 0; i < beszallitok.Content.Count; i++)
+                {
+                    listBoxBeszallitok.Items.Add(beszallitok.Content[i].DisplayName);
+
+                }
+
+            }
+        }
+        //beszállítók szerint szűrés
+        private void listBoxBeszallitok_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var index = listBoxBeszallitok.SelectedItem;
+            if (index != null)
+            {
+                List<Termek> szures = new List<Termek>();
+
+                for (int i = 0; i < termekek.Count; i++)
+                {
+                    if (termekek[i].Beszállító == index.ToString())
+                    {
+                        szures.Add(termekek[i]);
+                    }
+
+                }
+
+                dataGridView1.DataSource = szures;
 
             }
         }

@@ -35,9 +35,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(131, 12);
+            this.panel1.Location = new System.Drawing.Point(131, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 426);
+            this.panel1.Size = new System.Drawing.Size(669, 449);
             this.panel1.TabIndex = 0;
             // 
             // buttonKeszlet

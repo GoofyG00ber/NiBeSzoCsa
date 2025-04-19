@@ -21,5 +21,7 @@ namespace kliens_alkalmazas
         public  decimal OptimálishozSzükségesFt  { get; set; }
 
         public int OptimálishozSzükségesDb { get; set; }
+
+        public string Beszállító { get; set; }
     }
 }

@@ -48,7 +48,7 @@
             // 
             this.listBoxBeszallitok.FormattingEnabled = true;
             this.listBoxBeszallitok.ItemHeight = 16;
-            this.listBoxBeszallitok.Location = new System.Drawing.Point(444, 73);
+            this.listBoxBeszallitok.Location = new System.Drawing.Point(433, 69);
             this.listBoxBeszallitok.Name = "listBoxBeszallitok";
             this.listBoxBeszallitok.Size = new System.Drawing.Size(240, 100);
             this.listBoxBeszallitok.TabIndex = 1;
@@ -56,11 +56,11 @@
             // 
             // buttonCsv
             // 
-            this.buttonCsv.Location = new System.Drawing.Point(444, 314);
+            this.buttonCsv.Location = new System.Drawing.Point(433, 314);
             this.buttonCsv.Name = "buttonCsv";
-            this.buttonCsv.Size = new System.Drawing.Size(110, 59);
+            this.buttonCsv.Size = new System.Drawing.Size(240, 59);
             this.buttonCsv.TabIndex = 2;
-            this.buttonCsv.Text = "Mentés csv-be";
+            this.buttonCsv.Text = "Rendelendő termékek exportálása";
             this.buttonCsv.UseVisualStyleBackColor = true;
             this.buttonCsv.Click += new System.EventHandler(this.buttonCsv_Click);
             // 

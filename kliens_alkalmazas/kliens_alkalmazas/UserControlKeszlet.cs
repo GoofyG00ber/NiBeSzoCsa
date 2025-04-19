@@ -153,14 +153,25 @@ namespace kliens_alkalmazas
         {
             if (dataGridView1.DataSource == null)
             {
-                MessageBox.Show("Nincs exportálható adat.");
+                MessageBox.Show("Nincs exportálható adat.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiszűrjük a releváns termékeket (ahol OptimálishozSzükségesFt > 0)
+            var adatok = ((IEnumerable<Termek>)dataGridView1.DataSource)
+                            .Where(t => t.OptimálishozSzükségesFt > 0)
+                            .ToList();
+
+            if (adatok.Count == 0)
+            {
+                MessageBox.Show("Nincs olyan termék, ami exportálható lenne (OptimálishozSzükségesFt > 0).", "Nincs adat", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "CSV fájl (*.csv)|*.csv";
-               
+                sfd.FileName = "keszlet_szukseges.csv";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -169,42 +180,28 @@ namespace kliens_alkalmazas
                         using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
                         {
                             // Fejléc írása
-                            for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                            {
-                                sw.Write(dataGridView1.Columns[i].HeaderText);
-                                if (i < dataGridView1.Columns.Count - 1)
-                                    sw.Write(";");
-                            }
-                            sw.WriteLine();
+                            sw.WriteLine("Név;BeszerzésiÁr;Raktáron;MinimálisMennyiség;OptimálisMennyiség;OptimálishozSzükségesFt;OptimálishozSzükségesDb;Beszállító");
 
-                            // Adatok írása
-                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                            // Csak a szűrt termékek exportálása
+                            foreach (var t in adatok)
                             {
-                                if (!row.IsNewRow)
-                                {
-                                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                                    {
-                                        var cellValue = row.Cells[i].Value?.ToString()?.Replace(";", ",") ?? "";
-                                        sw.Write(cellValue);
-                                        if (i < dataGridView1.Columns.Count - 1)
-                                            sw.Write(";");
-                                    }
-                                    sw.WriteLine();
-                                }
+                                string sor = $"{t.Név};{t.BeszerzésiÁr.ToString("F2", CultureInfo.InvariantCulture)};{t.Raktáron};{t.MinimálisMennyiség};{t.OptimálisMennyiség};{t.OptimálishozSzükségesFt.ToString("F2", CultureInfo.InvariantCulture)};{t.OptimálishozSzükségesDb};{t.Beszállító}";
+                                sw.WriteLine(sor);
                             }
                         }
 
-                        MessageBox.Show("Sikeres exportálás!");
+                        MessageBox.Show("Sikeres exportálás!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Hiba történt az exportálás során: ");
+                        MessageBox.Show("Hiba történt az exportálás során: " + ex.Message, "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
-
     }
 
-
 }
+
+
+

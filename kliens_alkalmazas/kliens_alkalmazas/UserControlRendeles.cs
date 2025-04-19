@@ -13,6 +13,7 @@ namespace kliens_alkalmazas
 {
     public partial class UserControlRendeles : UserControl
     {
+        List<Rendeles> rendelesek = new List<Rendeles>();
         public UserControlRendeles()
         {
             InitializeComponent();
@@ -31,7 +32,18 @@ namespace kliens_alkalmazas
             }
             else
             {
-                dataGridView1.DataSource = response.Content;
+                for (int i = 0; i < response.Content.Count; i++)
+                {
+                    Rendeles rendeles = new Rendeles();
+                    rendeles.Id = response.Content[i].Id;
+                    rendeles.Dátum = response.Content[i].TimeOfOrderUtc;
+                    rendeles.Ár = response.Content[i].TotalGrand;
+                    rendeles.Státusz = response.Content[i].StatusName;
+
+                    rendelesek.Add(rendeles);
+                }
+
+                dataGridView1.DataSource = rendelesek;
 
             }
 
@@ -45,6 +57,6 @@ namespace kliens_alkalmazas
             return proxy;
         }
 
-
+        
     }
 }

@@ -19,5 +19,7 @@ namespace kliens_alkalmazas
         public int OptimálisMennyiség { get; set; }
 
         public  decimal OptimálishozSzükségesFt  { get; set; }
+
+        public int OptimálishozSzükségesDb { get; set; }
     }
 }

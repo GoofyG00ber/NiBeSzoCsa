@@ -78,10 +78,12 @@ namespace kliens_alkalmazas
                     if (termek.OptimálisMennyiség > termek.Raktáron)
                     {
                         termek.OptimálishozSzükségesFt = (termek.OptimálisMennyiség - termek.Raktáron) * termek.BeszerzésiÁr;
+                        termek.OptimálishozSzükségesDb = termek.OptimálisMennyiség - termek.Raktáron;
                     }
                     else
                     {
                         termek.OptimálishozSzükségesFt = 0;
+                        termek.OptimálishozSzükségesDb = 0;
                     }
 
 

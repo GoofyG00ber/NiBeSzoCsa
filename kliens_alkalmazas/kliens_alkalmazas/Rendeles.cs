@@ -8,12 +8,17 @@ namespace kliens_alkalmazas
 {
     internal class Rendeles
     {
-        public int Id { get; set; }
+        public string RendelésSzám { get; set; }
+
+        public string Bvin { get; set; }
 
         public decimal Ár { get; set; }
+
+        public string Email { get; set; }
 
         public  DateTime Dátum { get; set; }
 
         public string Státusz { get; set; }
+
     }
 }

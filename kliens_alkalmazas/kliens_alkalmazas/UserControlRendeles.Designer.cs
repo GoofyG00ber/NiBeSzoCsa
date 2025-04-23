@@ -39,11 +39,15 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(27, 67);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(411, 345);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // labelTermekek
             // 
@@ -57,10 +61,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(444, 102);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(171, 100);
+            this.listBox1.Size = new System.Drawing.Size(239, 100);
             this.listBox1.TabIndex = 5;
             // 
             // buttonSzallitas
@@ -83,7 +88,7 @@
             this.Controls.Add(this.labelTermekek);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserControlRendeles";
-            this.Size = new System.Drawing.Size(621, 580);
+            this.Size = new System.Drawing.Size(731, 580);
             this.Load += new System.EventHandler(this.UserControlRendeles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

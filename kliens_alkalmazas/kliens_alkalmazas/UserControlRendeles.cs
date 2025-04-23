@@ -53,11 +53,6 @@ namespace kliens_alkalmazas
                 }
 
                 dataGridView1.DataSource = rendelesek;
-
-                //var orderid = response.Content[20].bvin.ToLower();
-                //var response2 = proxy.OrdersFind(orderid);
-
-                //listBox1.Items.Add(response2.Content.Items[1].ProductName);
             }
 
 
@@ -121,6 +116,38 @@ namespace kliens_alkalmazas
             else
             {
                 MessageBox.Show("Kérlek, válassz ki egy rendelést.");
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+
+                if (selectedIndex >= 0 && selectedIndex < rendelesek.Count)
+                {
+                    var selectedOrder = rendelesek[selectedIndex];
+
+                    // Lekérjük a teljes rendelést az API-ból
+                    Api proxy = apiHivas();
+                    var response = proxy.OrdersFind(selectedOrder.Bvin);
+
+                    if (response != null && response.Content != null)
+                    {
+                        listBox1.Items.Clear(); // töröljük a korábbi tételeket
+
+                        foreach (var item in response.Content.Items)
+                        {
+                            listBox1.Items.Add(item.ProductName + " x" + item.Quantity + " db");
+                        }
+                    }
+                    else
+                    {
+                        listBox1.Items.Clear();
+                        listBox1.Items.Add("Nem sikerült lekérni a rendelés tételeit.");
+                    }
+                }
             }
         }
     }

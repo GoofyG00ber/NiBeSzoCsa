@@ -105,7 +105,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="libs\Hotcakes.Commerce.dll" />
+    <Content Include="libs\Hotcakes.Commerce.Dnn.dll" />
     <Content Include="libs\Hotcakes.CommerceDTO.dll" />
+    <Content Include="libs\Hotcakes.Modules.dll" />
+    <Content Include="libs\Hotcakes.Payment.dll" />
+    <Content Include="libs\Hotcakes.Web.dll" />
+    <Content Include="libs\Newtonsoft.Json.dll" />
+    <Content Include="libs\System.Web.Helpers.dll" />
+    <Content Include="libs\System.Web.Mvc.dll" />
+    <Content Include="libs\System.Web.Razor.dll" />
+    <Content Include="libs\System.Web.WebPages.Deployment.dll" />
+    <Content Include="libs\System.Web.WebPages.dll" />
+    <Content Include="libs\System.Web.WebPages.Razor.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

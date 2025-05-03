@@ -45,14 +45,14 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(411, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(893, 345);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // labelTermekek
             // 
             this.labelTermekek.AutoSize = true;
-            this.labelTermekek.Location = new System.Drawing.Point(444, 67);
+            this.labelTermekek.Location = new System.Drawing.Point(24, 437);
             this.labelTermekek.Name = "labelTermekek";
             this.labelTermekek.Size = new System.Drawing.Size(69, 16);
             this.labelTermekek.TabIndex = 3;
@@ -63,14 +63,14 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(444, 102);
+            this.listBox1.Location = new System.Drawing.Point(27, 468);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(239, 100);
+            this.listBox1.Size = new System.Drawing.Size(453, 100);
             this.listBox1.TabIndex = 5;
             // 
             // buttonSzallitas
             // 
-            this.buttonSzallitas.Location = new System.Drawing.Point(459, 381);
+            this.buttonSzallitas.Location = new System.Drawing.Point(787, 538);
             this.buttonSzallitas.Name = "buttonSzallitas";
             this.buttonSzallitas.Size = new System.Drawing.Size(133, 30);
             this.buttonSzallitas.TabIndex = 6;
@@ -88,7 +88,7 @@
             this.Controls.Add(this.labelTermekek);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UserControlRendeles";
-            this.Size = new System.Drawing.Size(731, 580);
+            this.Size = new System.Drawing.Size(1078, 619);
             this.Load += new System.EventHandler(this.UserControlRendeles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

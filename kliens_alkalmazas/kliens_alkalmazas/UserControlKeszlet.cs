@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Hotcakes.CommerceDTO.v1.Client;
 using System.IO;
 using System.Globalization;
+using System.Runtime.Remoting.Proxies;
 
 namespace kliens_alkalmazas
 {
@@ -54,6 +55,7 @@ namespace kliens_alkalmazas
                     {
                         Termek termek = new Termek();
                         termek.Név = response_product.Content[i].ProductName;
+                        termek.Bvin = keszlet.Content[0].Bvin;
                         termek.BeszerzésiÁr = Math.Round(response_product.Content[i].SiteCost, 2);
                         termek.Raktáron = keszlet.Content[0].QuantityOnHand;
                         termek.MinimálisMennyiség = keszlet.Content[0].LowStockPoint;
@@ -178,6 +180,50 @@ namespace kliens_alkalmazas
         private void buttonOsszes_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = termekek;
+        }
+
+        private void buttonPlusz_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Válassz ki egy terméket a táblázatból.");
+                return;
+            }
+
+            if (!int.TryParse(textBoxPlusz.Text, out int pluszDarab) /*|| pluszDarab <= 0*/)
+            {
+                MessageBox.Show("Adj meg egy egész számot a hozzáadni kívánt mennyiséghez.");
+                return;
+            }
+
+            // Feltételezzük, hogy a DataGridView sorai Termek objektumokat tartalmaznak
+            var sor = dataGridView1.SelectedRows[0];
+            Termek termek = sor.DataBoundItem as Termek;
+
+            if (termek != null)
+            {
+                // Frissítjük a raktáron lévő mennyiséget
+                termek.Raktáron += pluszDarab;
+
+                // Újraszámoljuk az optimálishoz szükséges mennyiséget és összeget
+                termek.OptimálishozSzükségesDb = termek.OptimálisMennyiség - termek.Raktáron;
+                termek.OptimálishozSzükségesFt = termek.OptimálishozSzükségesDb * termek.BeszerzésiÁr;
+
+                dataGridView1.Refresh();
+
+                Api proxy = apiHivas();
+                var updateTermek = proxy.ProductInventoryFind(termek.Bvin).Content;
+                updateTermek.QuantityOnHand = termek.Raktáron;
+                var response = proxy.ProductInventoryUpdate(updateTermek);
+                if (response != null && response.Errors.Count == 0)
+                {
+                    MessageBox.Show("Készlet frissítve.");
+                }
+                else
+                {
+                    MessageBox.Show("Hiba történt a készlet frissítésekor.");
+                }
+            }
         }
     }
 }

@@ -192,7 +192,7 @@ namespace kliens_alkalmazas
 
             if (!int.TryParse(textBoxPlusz.Text, out int pluszDarab) /*|| pluszDarab <= 0*/)
             {
-                MessageBox.Show("Adj meg egy egész számot a hozzáadni kívánt mennyiséghez.");
+                MessageBox.Show("Adj meg egy egész számot a hozzáadni kívánt mennyiségként.");
                 return;
             }
 

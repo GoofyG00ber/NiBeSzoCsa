@@ -48,70 +48,47 @@ namespace kliens_alkalmazas
 
                 for (int i = 0; i < response_product.Content.Count; i++)
                 {
-                    Termek termek = new Termek();
-                    termek.Név = response_product.Content[i].ProductName;
-                    termek.BeszerzésiÁr = Math.Round(response_product.Content[i].SiteCost,2);
-
                     var keszlet = proxy.ProductInventoryFindForProduct(response_product.Content[i].Bvin);
-                    termek.Raktáron = keszlet.Content[0].QuantityOnHand;
-                    termek.MinimálisMennyiség = keszlet.Content[0].LowStockPoint;
+
+                    if (keszlet.Content[0].QuantityOnHand < keszlet.Content[0].LowStockPoint)
+                    {
+                        Termek termek = new Termek();
+                        termek.Név = response_product.Content[i].ProductName;
+                        termek.BeszerzésiÁr = Math.Round(response_product.Content[i].SiteCost, 2);
+                        termek.Raktáron = keszlet.Content[0].QuantityOnHand;
+                        termek.MinimálisMennyiség = keszlet.Content[0].LowStockPoint;
 
 
-                    if (keszlet.Content[0].LowStockPoint == 1)
-                    {
-                        termek.OptimálisMennyiség = 3;
-                    }
-                    else if (keszlet.Content[0].LowStockPoint == 5)
-                    {
-                        termek.OptimálisMennyiség = 10;
-                    }
-                    else if (keszlet.Content[0].LowStockPoint == 15)
-                    {
-                        termek.OptimálisMennyiség = 30;
-                    }
-                    else if (keszlet.Content[0].LowStockPoint == 50)
-                    {
-                        termek.OptimálisMennyiség = 100;
-                    }
-                    else
-                    {
-                        termek.OptimálisMennyiség = 300;
-                    }
-
-
-                    if (termek.OptimálisMennyiség > termek.Raktáron)
-                    {
+                        if (keszlet.Content[0].LowStockPoint == 1)
+                        {
+                            termek.OptimálisMennyiség = 3;
+                        }
+                        else if (keszlet.Content[0].LowStockPoint == 5)
+                        {
+                            termek.OptimálisMennyiség = 10;
+                        }
+                        else if (keszlet.Content[0].LowStockPoint == 15)
+                        {
+                            termek.OptimálisMennyiség = 30;
+                        }
+                        else if (keszlet.Content[0].LowStockPoint == 50)
+                        {
+                            termek.OptimálisMennyiség = 100;
+                        }
+                        else
+                        {
+                            termek.OptimálisMennyiség = 300;
+                        }
                         termek.OptimálishozSzükségesFt = (termek.OptimálisMennyiség - termek.Raktáron) * termek.BeszerzésiÁr;
                         termek.OptimálishozSzükségesDb = termek.OptimálisMennyiség - termek.Raktáron;
-                    }
-                    else
-                    {
-                        termek.OptimálishozSzükségesFt = 0;
-                        termek.OptimálishozSzükségesDb = 0;
-                    }
 
-                    if (response_product.Content[i].ManufacturerId == "d579958c-9637-4680-958a-171f5ef37452")
-                    {
-                        termek.Beszállító = "BakeBeam Grillsütőgyártó kft.";
-                    }
-                    else if (response_product.Content[i].ManufacturerId == "067ff943-bb21-4f5f-bfec-1b66124df77e")
-                    {
-                        termek.Beszállító = "BakeBeam Mikrógyártó kft.";
-                    }
-                    else if (response_product.Content[i].ManufacturerId == "8e3d70b5-8050-4958-81aa-1f2f417d630e")
-                    {
-                        termek.Beszállító = "BakeBeam Kellékgyártó kft.";
-                    }
-                    else if (response_product.Content[i].ManufacturerId == "25afa805-3277-4272-8bfc-c5531289239b")
-                    {
-                        termek.Beszállító = "BakeBeam Airfryergyártó kft.";
-                    }
-                    else
-                    {
-                        termek.Beszállító = "BakeBeam Sütőgyártó kft.";
-                    }
+                        var beszallito = proxy.ManufacturerFind(response_product.Content[i].ManufacturerId);
+                        termek.Beszállító = beszallito.Content.DisplayName;
 
-                    termekek.Add(termek);
+
+                        termekek.Add(termek);
+                    }
+                    
 
                 }
 

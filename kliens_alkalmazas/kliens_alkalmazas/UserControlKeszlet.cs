@@ -50,7 +50,7 @@ namespace kliens_alkalmazas
                 {
                     Termek termek = new Termek();
                     termek.Név = response_product.Content[i].ProductName;
-                    termek.BeszerzésiÁr = response_product.Content[i].SiteCost;
+                    termek.BeszerzésiÁr = Math.Round(response_product.Content[i].SiteCost,2);
 
                     var keszlet = proxy.ProductInventoryFindForProduct(response_product.Content[i].Bvin);
                     termek.Raktáron = keszlet.Content[0].QuantityOnHand;

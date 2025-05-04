@@ -37,7 +37,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(131, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 449);
+            this.panel1.Size = new System.Drawing.Size(1051, 644);
             this.panel1.TabIndex = 0;
             // 
             // buttonKeszlet
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1194, 647);
             this.Controls.Add(this.buttonRendeles);
             this.Controls.Add(this.buttonKeszlet);
             this.Controls.Add(this.panel1);

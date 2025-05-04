@@ -40,7 +40,7 @@ namespace kliens_alkalmazas
                     Rendeles rendeles = new Rendeles();
                     rendeles.RendelésSzám = response.Content[i].OrderNumber;
                     rendeles.Dátum = response.Content[i].TimeOfOrderUtc;
-                    rendeles.Ár = response.Content[i].TotalGrand;
+                    rendeles.Ár = Math.Round(response.Content[i].TotalGrand,2);
                     rendeles.Státusz = response.Content[i].StatusName;
                     rendeles.Email = response.Content[i].UserEmail;
                     rendeles.Bvin = response.Content[i].bvin;

@@ -10,6 +10,8 @@ namespace kliens_alkalmazas
     {
         public string Név { get; set; }
 
+        public string Bvin { get; set; }
+
         public decimal BeszerzésiÁr { get; set; }
 
         public int Raktáron { get; set; }

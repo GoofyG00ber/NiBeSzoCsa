@@ -55,6 +55,15 @@ namespace kliens_alkalmazas
                 dataGridView1.DataSource = rendelesek;
             }
 
+            comboBoxStatusz.Items.Add("Received");
+            comboBoxStatusz.Items.Add("Ready for Shipping");
+            comboBoxStatusz.Items.Add("Ready for Payment");
+            comboBoxStatusz.Items.Add("On Hold");
+            comboBoxStatusz.Items.Add("Cancelled");
+            comboBoxStatusz.Items.Add("Complete");
+
+            comboBoxStatusz.SelectedIndex = 0;
+
 
         }
 
@@ -75,41 +84,39 @@ namespace kliens_alkalmazas
                 if (selectedIndex >= 0 && selectedIndex < rendelesek.Count)
                 {
                     Rendeles selectedOrder = rendelesek[selectedIndex];
+                    string ujStatusz = comboBoxStatusz.SelectedItem.ToString();
 
-                    if (selectedOrder.Státusz == "Received")
+                    // Az új státuszhoz tartozó kód beállítása
+                    string statusCode = GetStatusCodeByName(ujStatusz);
+                    if (string.IsNullOrEmpty(statusCode))
                     {
-                        Api proxy = apiHivas();
+                        MessageBox.Show("Ismeretlen státusz.");
+                        return;
+                    }
 
-                        // Lekérjük az eredeti rendelést az API-ból a teljes adattal
-                        var findResponse = proxy.OrdersFind(selectedOrder.Bvin);
-                        if (findResponse == null || findResponse.Content == null)
-                        {
-                            MessageBox.Show("Nem sikerült lekérni a rendelés részleteit.");
-                            return;
-                        }
+                    Api proxy = apiHivas();
+                    var findResponse = proxy.OrdersFind(selectedOrder.Bvin);
+                    if (findResponse == null || findResponse.Content == null)
+                    {
+                        MessageBox.Show("Nem sikerült lekérni a rendelés részleteit.");
+                        return;
+                    }
 
-                        var orderToUpdate = findResponse.Content;
-                        orderToUpdate.StatusCode = "0c6d4b57-3e46-4c20-9361-6b0e5827db5a";
-                        orderToUpdate.StatusName = "Ready for Shipping";
+                    var orderToUpdate = findResponse.Content;
+                    orderToUpdate.StatusName = ujStatusz;
+                    orderToUpdate.StatusCode = statusCode;
 
-                        var updateResponse = proxy.OrdersUpdate(orderToUpdate);
+                    var updateResponse = proxy.OrdersUpdate(orderToUpdate);
 
-                        if (updateResponse != null)
-                        {
-                            // Lokálisan is frissítjük a státuszt
-                            selectedOrder.Státusz = "Ready for Shipping";
-                            dataGridView1.Refresh();
-
-                            MessageBox.Show("A rendelés státusza sikeresen frissítve lett.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nem sikerült frissíteni a rendelést az API-n keresztül.");
-                        }
+                    if (updateResponse != null)
+                    {
+                        selectedOrder.Státusz = ujStatusz;
+                        dataGridView1.Refresh();
+                        MessageBox.Show("A rendelés státusza frissítve lett.");
                     }
                     else
                     {
-                        MessageBox.Show("Ez a rendelés nem 'Received' státuszú.");
+                        MessageBox.Show("Nem sikerült frissíteni a rendelést.");
                     }
                 }
             }
@@ -149,6 +156,21 @@ namespace kliens_alkalmazas
                     }
                 }
             }
+        }
+
+        private string GetStatusCodeByName(string statusName)
+        {
+            Dictionary<string, string> statuszKodok = new Dictionary<string, string>
+    {
+        { "Received", "F37EC405-1EC6-4a91-9AC4-6836215FBBBC" },
+        { "Ready for Shipping", "0c6d4b57-3e46-4c20-9361-6b0e5827db5a" },
+        { "Ready for Payment", "e42f8c28-9078-47d6-89f8-032c9a6e1cce" },
+        { "On Hold", "88B5B4BE-CA7B-41a9-9242-D96ED3CA3135" },
+        { "Cancelled", "A7FFDB90-C566-4cf2-93F4-D42367F359D5" },
+        { "Complete", "09D7305D-BD95-48d2-A025-16ADC827582A" }
+    };
+
+            return statuszKodok.ContainsKey(statusName) ? statuszKodok[statusName] : null;
         }
     }
 }

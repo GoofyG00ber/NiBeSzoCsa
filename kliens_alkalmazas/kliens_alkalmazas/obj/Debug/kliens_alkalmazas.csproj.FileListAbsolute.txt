@@ -38,6 +38,64 @@ C:\Users\farka\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\D
 C:\Users\farka\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\farka\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.SuggestedBindingRedirects.cache
 C:\Users\farka\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe.config
+<<<<<<< HEAD
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe.config
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.pdb
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Commerce.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Commerce.Dnn.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.CommerceDTO.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Modules.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Payment.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Web.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Newtonsoft.Json.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.Helpers.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.Mvc.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.Razor.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.AssemblyReference.cache
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.SuggestedBindingRedirects.cache
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe.config
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.Form1.resources
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.Properties.Resources.resources
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.UserControlKeszlet.resources
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.UserControlRendeles.resources
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.GenerateResource.cache
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.CoreCompileInputs.cache
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_a.A4BB8C7D.Up2Date
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe
+C:\Users\czani\Desktop\nib\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.pdb
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe.config
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.pdb
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Commerce.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Commerce.Dnn.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.CommerceDTO.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Modules.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Payment.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Hotcakes.Web.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.Helpers.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.Mvc.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.Razor.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.AssemblyReference.cache
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.SuggestedBindingRedirects.cache
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe.config
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.Form1.resources
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.Properties.Resources.resources
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.UserControlKeszlet.resources
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.UserControlRendeles.resources
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.GenerateResource.cache
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.csproj.CoreCompileInputs.cache
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_a.A4BB8C7D.Up2Date
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe
+C:\Users\Csanád\Source\Repos\NiBeSzoCsa\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.pdb
+=======
 C:\Users\Lenovo T470\Source\Repos\NiBeSzoCsa1\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe.config
 C:\Users\Lenovo T470\Source\Repos\NiBeSzoCsa1\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.exe
 C:\Users\Lenovo T470\Source\Repos\NiBeSzoCsa1\kliens_alkalmazas\kliens_alkalmazas\bin\Debug\kliens_alkalmazas.pdb
@@ -94,3 +152,4 @@ C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmaza
 C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_a.A4BB8C7D.Up2Date
 C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.exe
 C:\Users\farka\OneDrive\Dokumentumok\rendfejl\kliens_alkalmazas\kliens_alkalmazas\kliens_alkalmazas\obj\Debug\kliens_alkalmazas.pdb
+>>>>>>> main
